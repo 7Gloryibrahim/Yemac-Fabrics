@@ -10,7 +10,18 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 
+export const meta: Route.MetaFunction = () => [
+  { title: "Yemac-Fabrics" },
+  { name: "description", content: "Welcome to Yemac-Fabrics - Your premium fabric store." },
+];
+
 export const links: Route.LinksFunction = () => [
+ { 
+  rel: "icon",
+  type: "image/png",
+  href: "/Yemac-Icon.png"
+ },
+  
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
@@ -31,6 +42,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <title>Yemac-Fabrics</title>
       </head>
       <body>
         {children}
