@@ -1,0 +1,64 @@
+import { FaSearch } from "react-icons/fa";
+import { AiTwotoneHeart } from "react-icons/ai";
+import { BsFillHandbagFill } from "react-icons/bs";
+import { RiMenu3Fill } from "react-icons/ri";
+import { useState } from "react";
+
+export default function  Nav(){
+    const [isOpen, setIsOpen] = useState(false)
+    return(
+       <article>
+        <div className="sticky flex flex-row items-center gap-x-44 lg:gap-x-28 lg:mx-24 lg:border-0 border border-[#001DA0] h-28 mx-6 lg:mt-0 mt-5 lg:p-0 p-2.5 shadow shadow-[#001DA0] lg:shadow-none lg:rounded-none rounded-full">
+            <div>
+                <img src="/Yemac-Fabric-Logo.png" alt="Yemac-Fabric logo" className="w-52 lg:w-62 h-28"/>
+            </div>
+
+            <div className="border hidden lg:block border-[#001DA0] shadow shadow-[#001DA0] rounded-full uppercase text-[#001DA0]">
+                <ul className="flex flex-row gap-x-6 p-4  ">
+                    <li>Home</li>
+                    <li>Shop</li>
+                    <li>Collections</li>
+                    <li>About</li>
+                    <li>Contact</li>
+
+                </ul>
+            </div>
+
+            <div className="  flex-row gap-x-5 text-[#001DA0] text-2xl  hidden lg:flex">
+
+                <FaSearch />
+                <AiTwotoneHeart/>
+                < BsFillHandbagFill/>
+            </div>
+
+            <div onClick={()=> setIsOpen(true)}>
+                < RiMenu3Fill className="text-3xl text-[#001DA0] lg:hidden block"/>
+            </div>
+           
+        </div>
+
+         <div className={`fixed  z-50 left-0 top-0 bottom-0 w-72 bg-white transition-transform duration-300 border border-[#001DA0] shadow shadow-[#001DA0] ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
+
+            <div onClick={()=> setIsOpen(false)} className="absolute top-6 text-[#001DA0]    flex flow-row gap-x-6 items-center"> 
+             <div>
+                <img src="/Yemac-Fabric-Logo.png" alt="Yemac-Fabric logo" className="w-52 lg:w-62 h-16"/>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
+            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+            </svg>
+            
+            </div>
+                 <div className="    mt-16   uppercase text-[#001DA0]">
+                <ul className="flex flex-col gap-y-6 p-4  ">
+                    <li>Home</li>
+                    <li>Shop</li>
+                    <li>Collections</li>
+                    <li>About</li>
+                    <li>Contact</li>
+
+                </ul>
+            </div>
+            </div>
+       </article> 
+    )
+}
