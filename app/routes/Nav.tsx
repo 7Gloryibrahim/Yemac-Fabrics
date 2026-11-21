@@ -8,7 +8,7 @@ export default function  Nav(){
     const [isOpen, setIsOpen] = useState(false)
     return(
        <article>
-        <div className="sticky flex flex-row items-center gap-x-44 lg:gap-x-28 lg:mx-24 lg:border-0 border border-[#001DA0] h-28 mx-6 lg:mt-0 mt-5 lg:p-0 p-2.5 shadow shadow-[#001DA0] lg:shadow-none lg:rounded-none rounded-full">
+        <div className="sticky z-50 top-0 left-0 flex flex-row bg-white  items-center gap-x-44 lg:gap-x-28 lg:mx-24 lg:border lg:border-[#001DA0] border border-[#001DA0] h-28 mx-6 lg:mt-4 mt-5 lg:p-0 p-2.5 shadow shadow-[#001DA0] lg:shadow-none lg:rounded-full rounded-full">
             <div>
                 <img src="/Yemac-Fabric-Logo.png" alt="Yemac-Fabric logo" className="w-52 lg:w-62 h-28"/>
             </div>
