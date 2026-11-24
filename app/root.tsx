@@ -6,13 +6,27 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-
+import "swiper/css";
 import type { Route } from "./+types/root";
 import "./app.css";
+ 
 
 export const meta: Route.MetaFunction = () => [
-  { title: "Yemac-Fabrics" },
-  { name: "description", content: "Welcome to Yemac-Fabrics - Your premium fabric store." },
+  { title: "Yemac-Fabrics | For Exclusive Asoebi & Bridal Fabrics Gbagada, Lagos" },
+  { name: "description", content: "For your exclusive Asoebi Fabrics, Bridal Fabrics, Ready to wear, Cut & Sew, Fashion Designing and Styling, shop at Yemac Fabrics, Gbagada, Lagos" },
+{ property: "og:type", content: "website" },
+  { property: "og:title", content: "Yemac Fabrics | Exclusive Asoebi & Bridal Fabrics" },
+  { property: "og:description", content: "Premium bridal fabrics, Asoebi, ready-to-wear, and custom fashion styling in Gbagada, Lagos." },
+  
+  // PASTE YOUR REAL LINKS HERE:
+  { property: "og:url", content: "https://yemac-fabrics.vercel.app/" },
+  { property: "og:/Ankara1.webp", content: "https://yemac-fabrics.vercel.app/" },
+
+  // 3. Twitter Card Tags (For X)
+  { name: "twitter:card", content: "summary_large_image" },
+  { name: "twitter:title", content: "Yemac Fabrics | Exclusive Asoebi & Bridal Fabrics" },
+  { name: "twitter:description", content: "Premium bridal fabrics, Asoebi, and tailoring in Gbagada, Lagos." },
+  { name: "twitter:image", content: "https://yemac-fabrics.vercel.app/" },
 ];
 
 export const links: Route.LinksFunction = () => [
@@ -23,6 +37,10 @@ export const links: Route.LinksFunction = () => [
  },
   
   
+  {
+    rel: "stylesheet",
+    href:" https://fonts.googleapis.com/css2?family=Milonga&family=Playwrite+US+Trad:wght@100..400&display=swap"
+  }
   
     
 ];
@@ -35,7 +53,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
-        <title>Yemac-Fabrics</title>
+      
       </head>
       <body>
         {children}

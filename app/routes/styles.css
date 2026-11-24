@@ -1,0 +1,67 @@
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- FIXES THE INITIAL RELOAD FLASH --- */
+
+/* 1. Force the slider wrapper to lay out horizontally IMMEDIATELY before JS runs */
+.mySwiper .swiper-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+/* 2. Base structural rules for individual slide cards */
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0 !important; /* Prevents cards from smashing/shrinking into each other */
+  overflow: hidden;         /* Keeps massive images locked inside the card limits */
+}
+
+/* 3. Forces the image to behave perfectly inside its designated slide size */
+.swiper-slide img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+}
+
+/* 4. Desktop Fallback Widths (Matches slidesPerView: 5, spaceBetween: 50) */
+@media (min-width: 1024px) {
+  .mySwiper .swiper-slide {
+    width: calc((100% - 200px) / 5) !important; 
+    margin-right: 50px !important;
+  }
+}
+
+/* 5. Tablet Fallback Widths (Matches slidesPerView: 4, spaceBetween: 40) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .mySwiper .swiper-slide {
+    width: calc((100% - 120px) / 4) !important;
+    margin-right: 40px !important;
+  }
+}
+
+/* 6. Mobile Fallback Widths (Matches slidesPerView: 2, spaceBetween: 20) */
+@media (min-width: 640px) and (max-width: 767px) {
+  .mySwiper .swiper-slide {
+    width: calc((100% - 20px) / 2) !important;
+    margin-right: 20px !important;
+  }
+}
