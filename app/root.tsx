@@ -20,13 +20,12 @@ export const meta: Route.MetaFunction = () => [
   
   // PASTE YOUR REAL LINKS HERE:
   { property: "og:url", content: "https://yemac-fabrics.vercel.app/" },
-  { property: "og:/Ankara1.webp", content: "https://yemac-fabrics.vercel.app/" },
-
+  { property: "og:image", content: "https://yemac-fabrics.vercel.app/Ankara1.webp" },
   // 3. Twitter Card Tags (For X)
   { name: "twitter:card", content: "summary_large_image" },
   { name: "twitter:title", content: "Yemac Fabrics | Exclusive Asoebi & Bridal Fabrics" },
   { name: "twitter:description", content: "Premium bridal fabrics, Asoebi, and tailoring in Gbagada, Lagos." },
-  { name: "twitter:image", content: "https://yemac-fabrics.vercel.app/" },
+{ name: "twitter:image", content: "https://yemac-fabrics.vercel.app/Ankara1.webp" },
 ];
 
 export const links: Route.LinksFunction = () => [
